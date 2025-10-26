@@ -21,6 +21,7 @@ import CreateCourse from "./pages/CreateCourse";
 import EditCourse from "./pages/EditCourse";
 import ModulesPage from "./pages/ModulesPage";
 import ModuleLessons from "./pages/ModuleLessons";
+import EditLesson from "./pages/EditLesson";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,10 @@ const App = () => (
             <Route path="/course/:id/edit" element={<EditCourse />} />
             <Route path="/course/:id/modules" element={<ModulesPage />} />
             <Route path="/course/:courseId/modules/:moduleId/lessons" element={<ModuleLessons />} />
+            <Route
+  path="/course/:courseId/modules/:moduleId/lessons/:lessonId/edit"
+  element={<EditLesson />}
+/>
             <Route path="/dashboard" element={
               <ProtectedRoute>
                 <Dashboard />
