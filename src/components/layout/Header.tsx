@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Input } from "@/components/ui/input";
 import { useAuth } from "@/contexts/AuthContext";
+import { useNavigate } from "react-router-dom"; // make sure this import is at top if not already
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -31,6 +32,16 @@ export const Header = () => {
     </>
   );
 
+  const navigate = useNavigate();
+const [query, setQuery] = useState("");
+
+const handleSearch = (e: React.FormEvent) => {
+  e.preventDefault();
+  if (query.trim()) {
+    navigate(`/search?q=${encodeURIComponent(query)}`);
+  }
+};
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
@@ -45,14 +56,19 @@ export const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           <NavLinks />
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Search courses..."
-              className="pl-9 w-64"
-            />
-          </div>
+         <form onSubmit={handleSearch} className="relative">
+  <Search
+    onClick={handleSearch}
+    className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground cursor-pointer hover:text-foreground"
+  />
+  <Input
+    type="search"
+    placeholder="Search courses..."
+    value={query}
+    onChange={(e) => setQuery(e.target.value)}
+    className="pl-9 w-64"
+  />
+</form>
         </nav>
 
         {/* Desktop Auth */}
@@ -111,14 +127,20 @@ export const Header = () => {
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px]">
             <div className="flex flex-col gap-6 mt-6">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                <Input
-                  type="search"
-                  placeholder="Search courses..."
-                  className="pl-9"
-                />
-              </div>
+              <form onSubmit={handleSearch} className="relative">
+  <Search
+    onClick={handleSearch}
+    className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground cursor-pointer hover:text-foreground"
+  />
+  <Input
+    type="search"
+    placeholder="Search courses..."
+    value={query}
+    onChange={(e) => setQuery(e.target.value)}
+    className="pl-9"
+  />
+</form>
+
               <nav className="flex flex-col gap-4">
                 <NavLinks />
               </nav>

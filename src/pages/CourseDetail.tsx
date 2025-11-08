@@ -27,6 +27,7 @@ import { useCourseDetail } from "@/hooks/useCourseDetail";
 import { useEnrollment, useEnrollCourse } from "@/hooks/useEnrollment";
 import { useAuth } from "@/contexts/AuthContext";
 
+
 const CourseDetail = () => {
   const { userRole } = useAuth();
   const { id } = useParams();
@@ -97,7 +98,7 @@ useEffect(() => {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <div className="bg-gradient-to-br from-primary/95 to-primary text-primary-foreground">
+        <div className="bg-gradient-to-br from-slate-900 to-black text-slate-200">
           <div className="container py-12">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2 space-y-6">
@@ -258,8 +259,9 @@ useEffect(() => {
                 </TabsContent>
 
                 <TabsContent value="curriculum" className="mt-6">
-                  <CourseCurriculum />
-                </TabsContent>
+  <CourseCurriculum modules={course.modules || []} />
+</TabsContent>
+
 
                 <TabsContent value="reviews" className="mt-6">
                   <CourseReviews />
