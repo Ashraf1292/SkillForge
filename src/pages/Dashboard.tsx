@@ -60,7 +60,7 @@ const Dashboard = () => {
           {/* Welcome Section with enhanced design */}
           <div className="relative animate-slideDown">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-purple-500/10 to-accent/10 rounded-3xl blur-2xl -z-10 opacity-50" />
-            <div className="glass rounded-3xl p-8 border border-border/50 hover:border-border transition-all">
+           <div className="backdrop-blur-xl bg-white rounded-3xl p-8 border-2 border-slate-300 shadow-xl hover:shadow-2xl transition-all duration-300">
               <WelcomeSection 
                 userName={user.user_metadata.display_name || user.email} 
                 userRole={userRole || "student"} 
@@ -76,7 +76,7 @@ const Dashboard = () => {
           {/* Main Content Grid */}
           <div className="grid gap-8 animate-slideUp" style={{ animationDelay: '0.2s' }}>
             {/* Recent Courses */}
-            <div className="glass rounded-3xl p-8 border border-border/50 hover:border-border transition-all group">
+            <div className="bg-white rounded-3xl p-8 border-2 border-slate-300 shadow-xl hover:shadow-2xl transition-all duration-300 group">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-2 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
                   <BookOpen className="w-5 h-5 text-primary" />
@@ -110,7 +110,7 @@ const Dashboard = () => {
 
           {/* Quick Actions - Enhanced with cards */}
           <div className="animate-slideUp" style={{ animationDelay: '0.3s' }}>
-            <div className="glass rounded-3xl p-8 border border-border/50">
+            <div className="relative overflow-hidden rounded-2xl p-6 bg-gradient-to-br from-primary/5 to-primary/2 border-2 border-slate-300  ">
               <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
                 <Zap className="w-5 h-5 text-primary" />
                 Quick Actions

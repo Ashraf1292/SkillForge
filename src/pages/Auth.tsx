@@ -89,7 +89,7 @@ export default function Auth() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-900 via-slate-900 to-black p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <div className="flex justify-center mb-4">
@@ -133,7 +133,7 @@ export default function Auth() {
                     required
                   />
                 </div>
-                <Button type="submit" className="w-full" disabled={loading}>
+                <Button type="submit" className="w-full " disabled={loading}>
                   {loading ? 'Signing in...' : 'Sign In'}
                 </Button>
               </form>
@@ -180,7 +180,7 @@ export default function Auth() {
   <Label htmlFor="signup-role">Select Role</Label>
   <select
   id="signup-role"
-  className="w-full border rounded-md p-2 bg-background"
+  className="w-full border rounded-md p-2 bg-background font-bold"
   value={role}
   onChange={(e) => setRole(e.target.value as UserRole)}
   required

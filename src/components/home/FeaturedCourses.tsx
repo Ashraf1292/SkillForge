@@ -98,7 +98,7 @@ export const FeaturedCourses = () => {
                   onMouseEnter={() => setHoveredCard(course.id)}
                   onMouseLeave={() => setHoveredCard(null)}
                 >
-                  <Card className="group h-full overflow-hidden bg-gradient-to-br from-slate-800/50 to-slate-900/50 border-slate-700/50 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20">
+                  <Card className="group h-full overflow-hidden bg-gradient-to-br from-slate-800/70 to-slate-900/70 border-slate-700/50 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20">
                     {/* Thumbnail */}
                     <div className="relative aspect-video overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10 opacity-60" />
@@ -120,7 +120,7 @@ export const FeaturedCourses = () => {
                       </div>
                       
                       {/* Hover Overlay */}
-                      <div className={`absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-900/50 to-transparent z-20 flex items-center justify-center transition-opacity duration-300 ${hoveredCard === course.id ? 'opacity-100' : 'opacity-0'}`}>
+                      <div className={`absolute inset-0 bg-gradient-to-t  to-transparent z-20 flex items-center justify-center transition-opacity duration-300 ${hoveredCard === course.id ? 'opacity-100' : 'opacity-0'}`}>
                         <Button asChild className="bg-white text-slate-900 hover:bg-slate-100 font-semibold px-6">
                           <Link to={`/course/${course.id}`}>
                             Enroll Now
@@ -131,14 +131,14 @@ export const FeaturedCourses = () => {
                     </div>
                     
                     <CardHeader>
-                      <h3 className="font-bold text-xl line-clamp-2 text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-blue-400 group-hover:bg-clip-text transition-all duration-300">
+                      <h3 className="font-bold text-xl line-clamp-2 text-white  group-hover:bg-clip-text transition-all duration-300">
                         {course.title}
                       </h3>
                       <div className="flex items-center gap-2">
                         <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-xs font-bold text-white">
                           {course.instructor?.display_name?.charAt(0) || "?"}
                         </div>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-white">
                           {course.instructor?.display_name || "Unknown Instructor"}
                         </p>
                       </div>
@@ -150,11 +150,11 @@ export const FeaturedCourses = () => {
                           <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                           <span className="font-bold text-white">{course.rating || 0}</span>
                         </div>
-                        <div className="flex items-center gap-1.5 text-slate-400">
+                        <div className="flex items-center gap-1.5 text-white">
                           <Users className="h-4 w-4" />
                           <span>{course.students?.toLocaleString() || 0}</span>
                         </div>
-                        <div className="flex items-center gap-1.5 text-slate-400">
+                        <div className="flex items-center gap-1.5 text-white">
                           <Clock className="h-4 w-4" />
                           <span>{course.duration || "0 hours"}</span>
                         </div>
@@ -162,7 +162,7 @@ export const FeaturedCourses = () => {
                     </CardContent>
 
                     <CardFooter>
-                      <Button asChild className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0 transition-all duration-300">
+                      <Button asChild className="w-full bg-gradient-to-r black hover:from-blue-900 hover:to-blue-700 text-white border-0 transition-all duration-300">
                         <Link to={`/course/${course.id}`}>View Course</Link>
                       </Button>
                     </CardFooter>
@@ -176,7 +176,7 @@ export const FeaturedCourses = () => {
               <Button 
                 size="lg"
                 asChild
-                className="group bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white text-lg px-10 py-6 rounded-xl shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105"
+                className="group bg-gradient-to-r from-purple-800 to-blue-800 hover:from-purple-700 hover:to-blue-700 text-white text-lg px-10 py-6 rounded-xl shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105"
               >
                 <Link to="/courses">
                   Explore All Courses

@@ -108,10 +108,19 @@ const handleSearch = (e: React.FormEvent) => {
             </>
           ) : (
             <>
-              <Button variant="ghost" asChild>
-                <Link to="/auth">Login</Link>
-              </Button>
-              <Button asChild className="bg-accent hover:bg-accent/90">
+              <Button
+  variant="ghost"
+  asChild
+  className="
+    transition-all duration-300
+    text-slate-800 hover:text-white
+    hover:bg-purple-600
+    rounded-lg px-4 py-2
+  "
+>
+  <Link to="/auth">Login</Link>
+</Button>
+              <Button asChild className="group flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-100 hover:text-white hover:bg-purple-600 hover:border-purple-500 transition-all duration-300 hover:scale-105">
                 <Link to="/auth">Sign Up</Link>
               </Button>
             </>

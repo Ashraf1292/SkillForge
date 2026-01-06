@@ -19,7 +19,7 @@ export const CourseCategories = () => {
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Explore by Category</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-stale-400 max-w-2xl mx-auto">
             Find the perfect course in your area of interest
           </p>
         </div>
@@ -35,10 +35,10 @@ export const CourseCategories = () => {
                       <Icon className={`h-8 w-8 ${category.color}`} />
                     </div>
                     <div>
-                      <h3 className="font-semibold group-hover:text-primary transition-colors">
+                      <h3 className="font-bold group-hover:text-primary transition-colors">
                         {category.name}
                       </h3>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm  text-stale-200">
                         {category.count} courses
                       </p>
                     </div>

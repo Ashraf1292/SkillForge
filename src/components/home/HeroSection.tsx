@@ -55,7 +55,7 @@ export const HeroSection = () => {
             className={`text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           >
             <span className="block mb-4 text-white">Master New Skills</span>
-            <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent animate-gradient">
+            <span className="block bg-gradient-to-r from-purple-400  to-blue-00 bg-clip-text text-transparent animate-gradient">
               Transform Your Future
             </span>
           </h1>
@@ -86,7 +86,7 @@ export const HeroSection = () => {
               size="lg" 
               variant="outline"
               asChild 
-              className="group text-lg px-8 py-6 rounded-xl border-2 border-purple-500/50 bg-slate-900/50 backdrop-blur-sm hover:bg-purple-500/10 hover:border-purple-400 transition-all duration-300 hover:scale-105"
+              className="group text-lg text-white px-8 py-6 rounded-xl border-2 border-purple-500/50 bg-slate-900/50 backdrop-blur-sm hover:bg-purple-500/10 hover:border-purple-400 transition-all duration-300 hover:scale-105"
             >
               <Link to="/Auth">
               <PlayCircle className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
@@ -102,21 +102,21 @@ export const HeroSection = () => {
             <div className="group relative p-6 rounded-2xl bg-gradient-to-br from-purple-500/10 to-transparent border border-purple-500/20 backdrop-blur-sm hover:border-purple-400/50 transition-all duration-300 hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
               <Zap className="w-8 h-8 text-purple-400 mx-auto mb-3" />
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">10K+</div>
+              <div className="text-4xl md:text-5xl font-bold text-white  text-transparent">10K+</div>
               <div className="text-sm text-slate-400 mt-2">Active Learners</div>
             </div>
             
             <div className="group relative p-6 rounded-2xl bg-gradient-to-br from-blue-500/10 to-transparent border border-blue-500/20 backdrop-blur-sm hover:border-blue-400/50 transition-all duration-300 hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
               <Sparkles className="w-8 h-8 text-blue-400 mx-auto mb-3" />
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">500+</div>
+              <div className="text-4xl md:text-5xl font-bold text-white  text-transparent">500+</div>
               <div className="text-sm text-slate-400 mt-2">Quality Courses</div>
             </div>
             
             <div className="group relative p-6 rounded-2xl bg-gradient-to-br from-pink-500/10 to-transparent border border-pink-500/20 backdrop-blur-sm hover:border-pink-400/50 transition-all duration-300 hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
               <Award className="w-8 h-8 text-pink-400 mx-auto mb-3" />
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">100+</div>
+              <div className="text-4xl md:text-5xl font-bold text-white text-transparent">100+</div>
               <div className="text-sm text-slate-400 mt-2">Expert Instructors</div>
             </div>
           </div>

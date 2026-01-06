@@ -35,7 +35,7 @@ const Courses = () => {
         {/* Hero Section with Glass Effect */}
         <div className="relative py-20 md:py-28 overflow-hidden">
           {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-purple-500/10 to-accent/10" />
+<div className="absolute inset-0 bg-gradient-to-br from-slate-900  to-slate-950" />
           
           {/* Grid pattern overlay */}
           <div className="absolute inset-0 opacity-[0.02]" style={{
@@ -46,18 +46,18 @@ const Courses = () => {
           <div className="container relative z-10">
             <div className="max-w-4xl mx-auto text-center space-y-6 animate-slideUp">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-primary/20 text-sm font-medium mb-4">
-                <Sparkles className="w-4 h-4 text-primary" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/20 text-white font-medium mb-4">
+                <Sparkles className="w-4 h-4 text-white" />
                 <span className="gradient-text font-semibold">1000+ Premium Courses</span>
               </div>
               
               {/* Main heading with gradient */}
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-                <span className="gradient-text">Explore</span> Courses
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white">
+                <span className="text-white">Explore</span> Courses
               </h1>
               
               {/* Subheading */}
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xl text-white">
                 Discover thousands of courses from expert instructors across various disciplines
               </p>
               
@@ -68,7 +68,7 @@ const Courses = () => {
                     <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
                       <TrendingUp className="w-5 h-5 text-primary" />
                     </div>
-                    <span className="text-3xl font-bold gradient-text">250K+</span>
+                    <span className="text-3xl font-bold text-white">250K+</span>
                   </div>
                   <p className="text-sm text-muted-foreground">Active Learners</p>
                 </div>
@@ -78,7 +78,7 @@ const Courses = () => {
                     <div className="p-2 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
                       <Award className="w-5 h-5 text-accent" />
                     </div>
-                    <span className="text-3xl font-bold gradient-text">500+</span>
+                    <span className="text-3xl font-bold text-white">500+</span>
                   </div>
                   <p className="text-sm text-muted-foreground">Expert Instructors</p>
                 </div>
@@ -88,7 +88,7 @@ const Courses = () => {
                     <div className="p-2 rounded-lg bg-purple-500/10 group-hover:bg-purple-500/20 transition-colors">
                       <Sparkles className="w-5 h-5 text-purple-500" />
                     </div>
-                    <span className="text-3xl font-bold gradient-text">4.8/5</span>
+                    <span className="text-3xl font-bold text-white">4.8/5</span>
                   </div>
                   <p className="text-sm text-muted-foreground">Average Rating</p>
                 </div>

@@ -22,6 +22,7 @@ import EditCourse from "./pages/EditCourse";
 import ModulesPage from "./pages/ModulesPage";
 import ModuleLessons from "./pages/ModuleLessons";
 import EditLesson from "./pages/EditLesson";
+import VideoPlayerPage from "./pages/VideoPlayerPage";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +42,7 @@ const App = () => (
             <Route path="/course/:id/edit" element={<EditCourse />} />
             <Route path="/course/:id/modules" element={<ModulesPage />} />
             <Route path="/course/:courseId/modules/:moduleId/lessons" element={<ModuleLessons />} />
+            <Route path ="/course/:courseId/modules/:moduelId/lessons/:lessonId" element={<VideoPlayerPage/>}/>
             <Route
   path="/course/:courseId/modules/:moduleId/lessons/:lessonId/edit"
   element={<EditLesson />}

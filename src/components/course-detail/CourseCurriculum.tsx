@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useParams, Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlayCircle, ChevronDown, ChevronRight, Clock, FileText, CheckCircle2 } from "lucide-react";
 
@@ -70,7 +71,7 @@ export const CourseCurriculum = ({ modules, courseId = "demo" }) => {
         return (
           <Card 
             key={mod.id} 
-            className="group border-slate-700/50 bg-gradient-to-br from-slate-800/80 to-slate-900/50 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300 overflow-hidden"
+            className="group border-slate-700/30 bg-gradient-to-br from-slate-800/100 to-slate-900/80 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300 overflow-hidden"
           >
             <CardHeader
               className="cursor-pointer select-none hover:bg-slate-800/50 transition-all duration-300 relative"
@@ -164,12 +165,14 @@ export const CourseCurriculum = ({ modules, courseId = "demo" }) => {
                           </div>
                           
                           {lesson.video_url && (
-                            <button
-                              onClick={() => alert(`Navigate to: /course/${courseId}/modules/${mod.id}/lessons/${lesson.id}`)}
-                              className="flex-shrink-0 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-purple-500/20"
-                            >
-                              Watch
-                            </button>
+                            <Link
+  to={`/course/${courseId}/modules/${mod.id}/lessons/${lesson.id}`}
+  className="flex-shrink-0 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-purple-500/20"
+>
+  Watch
+</Link>
+
+
                           )}
                         </div>
                       </div>
