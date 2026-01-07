@@ -14,7 +14,7 @@ const MyCourses = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [userRole] = useState<"student" | "instructor">("student");
 
-  // Mock data for student courses
+  // Mock data 
   const enrolledCourses = [
     { 
       id: 1, 
@@ -62,7 +62,7 @@ const MyCourses = () => {
     },
   ];
 
-  // Mock data for instructor courses
+  // Mock data 
   const createdCourses = [
     { 
       id: 1, 

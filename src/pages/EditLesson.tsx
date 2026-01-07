@@ -23,7 +23,7 @@ const EditLesson = () => {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
 
-  // fetch existing lesson data
+  // fetch existing lesson
   useEffect(() => {
     const fetchLesson = async () => {
       const { data, error } = await supabase
@@ -44,7 +44,7 @@ const EditLesson = () => {
     fetchLesson();
   }, [lessonId]);
 
-  // update lesson data
+  // update lesson
   const handleUpdate = async () => {
     setSaving(true);
     const { error } = await supabase

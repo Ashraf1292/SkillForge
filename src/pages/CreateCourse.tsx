@@ -97,7 +97,6 @@ const CreateCourse = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
-      {/* Animated background */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
@@ -144,7 +143,7 @@ const CreateCourse = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Main Form */}
+          {/* course Creation Form */}
           <div className="lg:col-span-2 space-y-6 animate-slideUp" style={{ animationDelay: '0.2s' }}>
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Course Details Card */}
@@ -218,7 +217,6 @@ const CreateCourse = () => {
                 </div>
               </div>
 
-              {/* Additional Content Section (Non-functional UI) */}
               <div className="glass rounded-3xl p-8 border border-border/50 opacity-60">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="p-2 rounded-xl bg-accent/10">
@@ -288,7 +286,7 @@ const CreateCourse = () => {
             </form>
           </div>
 
-          {/* Sidebar - Tips & Stats */}
+          {/* extra*/}
           <div className="lg:col-span-1 space-y-6 animate-slideUp" style={{ animationDelay: '0.3s' }}>
             {/* Preview Card */}
             <div className="glass rounded-3xl p-6 border border-border/50 sticky top-24">
@@ -321,7 +319,7 @@ const CreateCourse = () => {
               </div>
             </div>
 
-            {/* Tips Card */}
+            {/* Tips & hints*/}
             <div className="glass rounded-3xl p-6 border border-border/50">
               <div className="flex items-center gap-2 mb-4">
                 <Award className="w-5 h-5 text-accent" />

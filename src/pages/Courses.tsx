@@ -22,7 +22,7 @@ const Courses = () => {
 
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden">
-      {/* Animated background elements */}
+      {/* Background */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
@@ -32,12 +32,9 @@ const Courses = () => {
       <Header />
       
       <main className="flex-1">
-        {/* Hero Section with Glass Effect */}
         <div className="relative py-20 md:py-28 overflow-hidden">
-          {/* Gradient overlay */}
+
 <div className="absolute inset-0 bg-gradient-to-br from-slate-900  to-slate-950" />
-          
-          {/* Grid pattern overlay */}
           <div className="absolute inset-0 opacity-[0.02]" style={{
             backgroundImage: `radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)`,
             backgroundSize: '32px 32px'
@@ -45,23 +42,19 @@ const Courses = () => {
           
           <div className="container relative z-10">
             <div className="max-w-4xl mx-auto text-center space-y-6 animate-slideUp">
-              {/* Badge */}
+              {/* Badges */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/20 text-white font-medium mb-4">
                 <Sparkles className="w-4 h-4 text-white" />
                 <span className="gradient-text font-semibold">1000+ Premium Courses</span>
               </div>
-              
-              {/* Main heading with gradient */}
               <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white">
                 <span className="text-white">Explore</span> Courses
               </h1>
-              
-              {/* Subheading */}
               <p className="text-xl text-white">
                 Discover thousands of courses from expert instructors across various disciplines
               </p>
               
-              {/* Stats Cards */}
+              {/* Stats Card*/}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-8 max-w-3xl mx-auto">
                 <div className="glass rounded-2xl p-6 border border-border/50 hover:border-primary/30 transition-all group hover:scale-[1.02]">
                   <div className="flex items-center gap-3 mb-2">
@@ -97,10 +90,10 @@ const Courses = () => {
           </div>
         </div>
 
-        {/* Main Content */}
+        {/* Main Contents */}
         <div className="container py-16 relative">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            {/* Filters Sidebar */}
+            {/*Filter */}
             <aside className="lg:col-span-1">
               <div className="sticky top-24 space-y-4 animate-slideDown">
                 <div className="glass rounded-2xl p-6 border border-border/50 hover:border-border transition-all">

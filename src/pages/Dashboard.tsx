@@ -9,11 +9,33 @@ import { Button } from "@/components/ui/button";
 import { BookOpen, Plus, Sparkles, Zap, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
+import { supabase } from "@/integrations/supabase/client";
+
 
 const Dashboard = () => {
   const { user, userRole, loading } = useAuth();
+   const [profileName, setProfileName] = useState("");
 
-  // Loading state with modern spinner
+  useEffect(() => {
+    const fetchProfileName = async () => {
+      if (!user) return;
+
+      const { data, error } = await supabase
+        .from("profiles")
+        .select("display_name")
+        .eq("id", user.id)
+        .single();
+
+      if (!error && data?.display_name) {
+        setProfileName(data.display_name);
+      }
+    };
+
+    fetchProfileName();
+  }, [user]);
+
+
+  // Loading state
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
@@ -46,7 +68,7 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden">
-      {/* Animated background elements */}
+      {/* Background*/}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }} />
@@ -57,23 +79,23 @@ const Dashboard = () => {
       
       <main className="flex-1 relative">
         <div className="container mx-auto px-4 py-8 space-y-8">
-          {/* Welcome Section with enhanced design */}
+          {/* Welcome Section*/}
           <div className="relative animate-slideDown">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-purple-500/10 to-accent/10 rounded-3xl blur-2xl -z-10 opacity-50" />
            <div className="backdrop-blur-xl bg-white rounded-3xl p-8 border-2 border-slate-300 shadow-xl hover:shadow-2xl transition-all duration-300">
               <WelcomeSection 
-                userName={user.user_metadata.display_name || user.email} 
+                userName={profileName} 
                 userRole={userRole || "student"} 
               />
             </div>
           </div>
 
-          {/* Stats Cards with staggered animation */}
+          {/* Stats Card*/}
           <div className="animate-slideUp" style={{ animationDelay: '0.1s' }}>
             <StatsCards userRole={userRole || "student"} />
           </div>
 
-          {/* Main Content Grid */}
+          {/* Main Grid */}
           <div className="grid gap-8 animate-slideUp" style={{ animationDelay: '0.2s' }}>
             {/* Recent Courses */}
             <div className="bg-white rounded-3xl p-8 border-2 border-slate-300 shadow-xl hover:shadow-2xl transition-all duration-300 group">
@@ -108,7 +130,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* Quick Actions - Enhanced with cards */}
+          {/* Quick Action Sectio */}
           <div className="animate-slideUp" style={{ animationDelay: '0.3s' }}>
             <div className="relative overflow-hidden rounded-2xl p-6 bg-gradient-to-br from-primary/5 to-primary/2 border-2 border-slate-300  ">
               <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
@@ -117,7 +139,7 @@ const Dashboard = () => {
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {/* Browse Courses Card */}
+                {/* Browse Courses*/}
                 <Link to="/courses" className="group">
                   <div className="relative overflow-hidden rounded-2xl p-6 bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 hover:border-primary/40 transition-all hover:scale-[1.02]">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
@@ -131,7 +153,7 @@ const Dashboard = () => {
                   </div>
                 </Link>
 
-                {/* Create Course Card - Only for instructors */}
+                {/* Create Course*/}
                 {userRole === "instructor" && (
                   <Link to="/create-course" className="group">
                     <div className="relative overflow-hidden rounded-2xl p-6 bg-gradient-to-br from-accent/10 to-accent/5 border border-accent/20 hover:border-accent/40 transition-all hover:scale-[1.02]">

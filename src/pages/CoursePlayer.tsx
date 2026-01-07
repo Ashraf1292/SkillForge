@@ -49,7 +49,7 @@ const CoursePlayer = () => {
     try {
       setLoading(true);
 
-      // Fetch course details
+      // course details
       const { data: courseData, error: courseError } = await supabase
         .from("courses")
         .select("*, profiles(display_name)")
@@ -59,7 +59,7 @@ const CoursePlayer = () => {
       if (courseError) throw courseError;
       setCourse(courseData);
 
-      // Fetch modules with lessons
+      // modules-lessons
       const { data: modulesData, error: modulesError } = await supabase
         .from("course_modules")
         .select("*, lessons(*)")
@@ -68,7 +68,7 @@ const CoursePlayer = () => {
 
       if (modulesError) throw modulesError;
 
-      // Fetch lesson progress
+      // lesson progress
       if (user) {
         const { data: progressData } = await supabase
           .from("lesson_progress")
@@ -91,7 +91,7 @@ const CoursePlayer = () => {
 
         setModules(modulesWithProgress);
 
-        // Calculate overall progress
+        // Calculation of overall progress
         const totalLessons = modulesWithProgress.reduce(
           (acc: number, m: Module) => acc + m.lessons.length,
           0
@@ -124,7 +124,7 @@ const CoursePlayer = () => {
   const handleProgress = async (currentTime: number, duration: number) => {
     if (!user || !currentLesson) return;
 
-    // Save progress every 10 seconds
+    // Save progress
     if (Math.floor(currentTime) % 10 === 0) {
       await supabase.from("lesson_progress").upsert({
         user_id: user.id,
@@ -133,7 +133,7 @@ const CoursePlayer = () => {
       });
     }
 
-    // Mark as completed if watched 90%+
+    // Marks video as completed if watched 90%+
     if (currentTime / duration >= 0.9 && !currentLesson.completed) {
       await markLessonComplete(currentLesson.id);
     }
@@ -149,7 +149,7 @@ const CoursePlayer = () => {
       completed_at: new Date().toISOString(),
     });
 
-    // Reload to update UI
+    // Reload UI
     loadCourseData();
 
     toast({
@@ -159,7 +159,7 @@ const CoursePlayer = () => {
   };
 
   const handleLessonEnded = () => {
-    // Auto-advance to next lesson
+    // next lesson
     const allLessons = modules.flatMap((m) => m.lessons);
     const currentIndex = allLessons.findIndex((l) => l.id === lessonId);
     if (currentIndex < allLessons.length - 1) {
@@ -199,7 +199,7 @@ const CoursePlayer = () => {
       <Header />
       
       <div className="flex-1 flex flex-col lg:flex-row">
-        {/* Main Video Area */}
+        {/* Main Video Card */}
         <div className="flex-1 flex flex-col">
           <div className="bg-muted p-4 border-b">
             <div className="container mx-auto">

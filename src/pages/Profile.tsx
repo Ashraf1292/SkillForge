@@ -8,7 +8,7 @@ import InstructorProfile from "@/components/profile/InstructorProfile";
 const Profile = () => {
   const { userId } = useParams();
   
-  // Mock data - will be replaced with real data later
+  // Mock data - (for now)
   const currentUserId = "current-user-id";
   const isOwnProfile = userId === currentUserId;
   

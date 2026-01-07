@@ -1,10 +1,9 @@
-// src/pages/VideoPlayerPage.tsx
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { supabase } from "@/integrations/supabase/client";
 
-// Minimal wrapper for TS
+
 type ReactPlayerMinimalProps = {
   url: string;
   controls?: boolean;
@@ -14,11 +13,11 @@ type ReactPlayerMinimalProps = {
 };
 
 const PlayerWrapper = (props: ReactPlayerMinimalProps) => {
-  // @ts-ignore
+
   return <ReactPlayer {...props} />;
 };
 
-// Define the Lesson type
+// Lesson tyope
 type Lesson = {
   id: string;
   module_id: string;

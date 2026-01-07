@@ -28,7 +28,7 @@ const AdminDashboard = () => {
     try {
       setLoading(true);
 
-      // Fetch platform statistics
+      // platform stats
       const [usersCount, coursesCount, enrollmentsCount] = await Promise.all([
         supabase.from("profiles").select("*", { count: "exact", head: true }),
         supabase.from("courses").select("*", { count: "exact", head: true }),
@@ -106,7 +106,7 @@ const AdminDashboard = () => {
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold mb-8">Admin Dashboard</h1>
 
-      {/* Statistics Cards */}
+      {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
@@ -149,7 +149,7 @@ const AdminDashboard = () => {
         </Card>
       </div>
 
-      {/* Management Tabs */}
+      {/* Manage Tabs */}
       <Tabs defaultValue="courses" className="space-y-4">
         <TabsList>
           <TabsTrigger value="courses">Courses</TabsTrigger>

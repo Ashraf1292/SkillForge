@@ -67,7 +67,7 @@ export const HeroSection = () => {
             Your next breakthrough starts here.
           </p>
 
-          {/* CTA Buttons */}
+
           <div 
             className={`flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           >
@@ -95,7 +95,7 @@ export const HeroSection = () => {
             </Button>
           </div>
 
-          {/* Enhanced Stats */}
+          {/* Miscellaenous Stats */}
           <div 
             className={`grid grid-cols-1 sm:grid-cols-3 gap-8 pt-16 max-w-4xl mx-auto transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           >
@@ -121,7 +121,7 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Floating elements */}
+          {/* floating elemetns*/}
           <div className="absolute top-20 left-10 w-20 h-20 bg-purple-500/20 rounded-full blur-xl animate-bounce" style={{ animationDuration: '3s' }} />
           <div className="absolute bottom-20 right-10 w-16 h-16 bg-blue-500/20 rounded-full blur-xl animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }} />
         </div>

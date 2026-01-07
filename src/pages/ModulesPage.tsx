@@ -26,12 +26,12 @@ const ModulesPage = () => {
   const [loading, setLoading] = useState(true);
   const [adding, setAdding] = useState(false);
 
-  // ✅ Fetch all modules for this course
+  // ✅ Fetch all modules for a specific course
   useEffect(() => {
     const fetchModules = async () => {
       setLoading(true);
       const { data, error } = await supabase
-        .from("course_modules") // ✅ FIXED
+        .from("course_modules")
         .select("*")
         .eq("course_id", courseId)
         .order("order_index", { ascending: true });
@@ -44,7 +44,7 @@ const ModulesPage = () => {
     fetchModules();
   }, [courseId]);
 
-  // ✅ Add new module
+  // ✅ Adding new module
   const handleAddModule = async () => {
     if (!title.trim()) return;
     setAdding(true);
@@ -53,13 +53,13 @@ const ModulesPage = () => {
     const nextOrder = modules.length > 0 ? modules.length + 1 : 1;
 
     const { data, error } = await supabase
-      .from("course_modules") // ✅ FIXED
+      .from("course_modules") 
       .insert([
         {
           title,
           description,
           course_id: courseId!,
-          order_index: nextOrder, // ✅ Required by schema
+          order_index: nextOrder,
         },
       ])
       .select();
@@ -106,7 +106,7 @@ const ModulesPage = () => {
               </Button>
             </div>
 
-            {/* Existing modules list */}
+            {/* Existingmodules */}
             <div className="space-y-4">
               {modules.length === 0 ? (
                 <p className="text-muted-foreground">No modules yet.</p>

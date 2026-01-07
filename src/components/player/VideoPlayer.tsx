@@ -86,7 +86,7 @@ const VideoPlayer = ({ videoUrl, onProgress, onEnded, autoPlay = false }: VideoP
     return () => window.removeEventListener("keydown", handleKeyPress);
   }, []);
 
-  // Auto-hide controls
+  // Hide controls
   const resetControlsTimeout = () => {
     if (controlsTimeoutRef.current) {
       clearTimeout(controlsTimeoutRef.current);
@@ -165,14 +165,14 @@ const VideoPlayer = ({ videoUrl, onProgress, onEnded, autoPlay = false }: VideoP
         autoPlay={autoPlay}
       />
 
-      {/* Loading/Error State */}
+      {/* Loading/Error Part*/}
       {!videoUrl && (
         <div className="absolute inset-0 flex items-center justify-center bg-muted">
           <p className="text-muted-foreground">No video available</p>
         </div>
       )}
 
-      {/* Play/Pause Overlay */}
+      {/* Play/Pause Part*/}
       {!isPlaying && videoUrl && (
         <div className="absolute inset-0 flex items-center justify-center">
           <Button
@@ -192,7 +192,7 @@ const VideoPlayer = ({ videoUrl, onProgress, onEnded, autoPlay = false }: VideoP
           showControls || !isPlaying ? "opacity-100" : "opacity-0"
         }`}
       >
-        {/* Progress Bar */}
+        {/* Progress*/}
         <Slider
           value={[currentTime]}
           max={duration || 100}

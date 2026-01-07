@@ -11,7 +11,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { X, Upload } from "lucide-react";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client"; // Make sure this points to your Supabase client
+import { supabase } from "@/integrations/supabase/client";
 
 type UserProfile = {
   id: string;
@@ -49,7 +49,7 @@ const EditProfile = () => {
 
         setFormData({
         id: profile.id,
-        name: profile.display_name, // map correctly
+        name: profile.display_name, 
         email: profile.email,
         bio: profile.bio || "",
         avatar: profile.avatar_url || "",
@@ -129,7 +129,7 @@ const EditProfile = () => {
           <h1 className="text-3xl font-bold mb-8">Edit Profile</h1>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Avatar Section */}
+            {/* Avatar*/}
             <Card>
               <CardHeader>
                 <CardTitle>Profile Picture</CardTitle>
@@ -149,7 +149,7 @@ const EditProfile = () => {
               </CardContent>
             </Card>
 
-            {/* Basic Information */}
+            {/* Basic Info*/}
             <Card>
               <CardHeader>
                 <CardTitle>Basic Information</CardTitle>

@@ -59,13 +59,13 @@ export const FeaturedCourses = () => {
 
   return (
     <section className="py-24 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-      {/* Animated background elements */}
+      {/* Animated background */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxMjQsIDU4LCAyMzcsIDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-40" />
       <div className="absolute top-20 right-20 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-20 left-20 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       
       <div className="container relative z-10">
-        {/* Section Header */}
+        {/* Header */}
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 backdrop-blur-sm mb-6">
             <TrendingUp className="w-4 h-4 text-purple-400" />
@@ -99,7 +99,7 @@ export const FeaturedCourses = () => {
                   onMouseLeave={() => setHoveredCard(null)}
                 >
                   <Card className="group h-full overflow-hidden bg-gradient-to-br from-slate-800/70 to-slate-900/70 border-slate-700/50 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20">
-                    {/* Thumbnail */}
+                    {/* thumbnails */}
                     <div className="relative aspect-video overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10 opacity-60" />
                       <img
@@ -108,18 +108,18 @@ export const FeaturedCourses = () => {
                         className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
                       />
                       
-                      {/* Category Badge */}
+                      {/* Category*/}
                       <Badge className="absolute top-4 right-4 bg-gradient-to-r from-purple-600 to-blue-600 border-0 text-white shadow-lg z-20">
                         {course.category.replace(/_/g, " ").toUpperCase()}
                       </Badge>
                       
-                      {/* Trending Badge */}
+                      {/* Trending*/}
                       <div className="absolute top-4 left-4 flex items-center gap-1 px-3 py-1 rounded-full bg-yellow-500/90 backdrop-blur-sm z-20">
                         <Sparkles className="w-3 h-3 text-yellow-900" />
                         <span className="text-xs font-bold text-yellow-900">TRENDING</span>
                       </div>
                       
-                      {/* Hover Overlay */}
+
                       <div className={`absolute inset-0 bg-gradient-to-t  to-transparent z-20 flex items-center justify-center transition-opacity duration-300 ${hoveredCard === course.id ? 'opacity-100' : 'opacity-0'}`}>
                         <Button asChild className="bg-white text-slate-900 hover:bg-slate-100 font-semibold px-6">
                           <Link to={`/course/${course.id}`}>
@@ -171,7 +171,7 @@ export const FeaturedCourses = () => {
               ))}
             </div>
 
-            {/* View All Button */}
+
             <div className={`text-center mt-16 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <Button 
                 size="lg"

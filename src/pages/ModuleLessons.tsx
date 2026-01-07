@@ -70,7 +70,7 @@ const ModuleLessons = () => {
           Manage Module Lessons
         </h1>
 
-        {/* Add Lesson Card */}
+        {/* Add Lessons*/}
         <Card className="max-w-3xl mx-auto shadow-md border border-gray-200">
           <CardHeader className="text-center">
             <CardTitle className="text-xl font-semibold text-gray-700">
@@ -107,10 +107,9 @@ const ModuleLessons = () => {
           </CardContent>
         </Card>
 
-        {/* Divider */}
         <div className="border-t border-gray-300 w-full max-w-3xl mx-auto my-8" />
 
-        {/* Lessons List */}
+        {/*Lessons List */}
         <div className="max-w-3xl mx-auto space-y-4">
           <h2 className="text-xl font-semibold text-gray-700 mb-4">Existing Lessons</h2>
 

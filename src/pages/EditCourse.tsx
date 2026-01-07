@@ -159,7 +159,7 @@ const CourseEdit = () => {
               </div>
             </div>
 
-            {/* Thumbnail URL */}
+            {/* Thumbnail URL*/}
             <div className="space-y-2">
               <label className="block text-sm font-medium text-muted-foreground">Thumbnail URL</label>
               <Input
